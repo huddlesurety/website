@@ -2,12 +2,15 @@
   "name": "huddle-marketing",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "next": "^15.0.0",
