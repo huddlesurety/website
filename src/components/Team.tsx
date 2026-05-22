@@ -159,8 +159,8 @@ export function Team() {
         <p className="section-label">About</p>
         <h2 className="section-title">Our Team</h2>
         <p className="section-description">
-          A founding team that brings three decades of family experience in
-          surety together with full-stack engineering and AI-research.
+          A founding team that brings generational experience in
+          surety together with full-stack AI engineering.
         </p>
       </div>
 
