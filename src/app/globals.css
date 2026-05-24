@@ -3090,7 +3090,7 @@ main > section:has(> .section-rule) { padding-top: 1.5rem; }
     border-top: none;
     background: transparent;
   }
-  .feat-item .feat-panel-meta h3 { font-size: 1.1rem; }
+  .feat-item .feat-panel-meta h3 { display: none; }
   .feat-item .feat-panel-meta p { font-size: 0.85rem; }
   /* Hide the coord pill inside the reparented panel context */
   .feat-item .feat-panel .stage-coord { display: none; }
