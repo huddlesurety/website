@@ -3061,7 +3061,9 @@ main > section:has(> .section-rule) { padding-top: 1.5rem; }
      We use max-height + opacity rather than wrapping the children, to keep
      the desktop grid structure intact. */
   .feat-item .feat-panel {
+    grid-area: auto;
     grid-column: 1 / -1;
+    grid-row: 2;
     display: block;
     max-height: 0;
     opacity: 0;
