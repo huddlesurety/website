@@ -12,7 +12,7 @@ export function DiamondDots() {
     const collect = () => {
       const pairs: { anchor: HTMLElement; dot: HTMLElement }[] = [];
       const introLabel = document.querySelector<HTMLElement>(
-        ".intro-visual .iv-label"
+        ".intro-visual .iv-label",
       );
       if (introLabel) {
         const d = introLabel.querySelector<HTMLElement>(".dot");

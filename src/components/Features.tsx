@@ -108,7 +108,7 @@ export function Features() {
       (entries) => {
         entries.forEach((e) => setRevealed(e.isIntersecting));
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     io.observe(node);
     return () => io.disconnect();

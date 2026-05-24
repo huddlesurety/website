@@ -35,7 +35,7 @@ export function ScrollReveal() {
           ":scope > .process-sticky > div > .section-title, " +
           ":scope .contact-info > .section-label, " +
           ":scope .contact-info > .section-title, " +
-          ":scope .contact-info > .section-description"
+          ":scope .contact-info > .section-description",
       );
       let i = 0;
       targets.forEach((el) => {
@@ -46,16 +46,14 @@ export function ScrollReveal() {
 
       // Inside .team-header, stagger its inner items too
       const teamHeader = section.querySelector<HTMLElement>(
-        ":scope > .team-header"
+        ":scope > .team-header",
       );
       if (teamHeader) {
         let j = 0;
-        teamHeader
-          .querySelectorAll<HTMLElement>(":scope > *")
-          .forEach((el) => {
-            el.classList.add("reveal");
-            el.style.setProperty("--reveal-i", String(j++));
-          });
+        teamHeader.querySelectorAll<HTMLElement>(":scope > *").forEach((el) => {
+          el.classList.add("reveal");
+          el.style.setProperty("--reveal-i", String(j++));
+        });
         teamHeader.classList.remove("reveal");
       }
     });
@@ -69,7 +67,7 @@ export function ScrollReveal() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
     );
 
     document

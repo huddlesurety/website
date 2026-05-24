@@ -11,9 +11,9 @@ export function Introduction() {
         <div>
           <p className="intro-support">
             Huddle analyzes project documents, asks the contractor a few quick
-            questions, and generates the bond request and policy automatically
-            — helping brokers improve customer delivery by replacing manual
-            work with surety-trained intelligence.
+            questions, and generates the bond request and policy automatically —
+            helping brokers improve customer delivery by replacing manual work
+            with surety-trained intelligence.
           </p>
 
           <div className="intro-stats">

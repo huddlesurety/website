@@ -159,8 +159,8 @@ export function Team() {
         <p className="section-label">About</p>
         <h2 className="section-title">Our Team</h2>
         <p className="section-description">
-          A founding team that brings generational experience in
-          surety together with full-stack AI engineering.
+          A founding team that brings generational experience in surety together
+          with full-stack AI engineering.
         </p>
       </div>
 
@@ -231,9 +231,7 @@ function TeamCard({ member }: { member: Member }) {
           }}
         >
           <span className="label">
-            {open
-              ? `Less about ${member.name}`
-              : `More about ${member.name}`}
+            {open ? `Less about ${member.name}` : `More about ${member.name}`}
           </span>
           <span className="chev">
             <svg
