@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
+import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-// Font loading note:
-// We load fonts via <link> here to mirror the prototype exactly and to
-// avoid build-time issues if the exact font names aren't in next/font/google.
-// Once the fonts are confirmed working, you can migrate to next/font for
-// better performance (eliminates the runtime request, removes CLS).
-// See README.md for the upgrade snippet.
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://huddlesurety.co"),
@@ -39,6 +46,9 @@ export const metadata: Metadata = {
       "Move beyond antiquated systems. Modern AI and seamless collaboration for the world of surety.",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: "https://brand.huddlesurety.co/logo/md-light.svg",
+  },
 };
 
 export default function RootLayout({
@@ -47,19 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   );

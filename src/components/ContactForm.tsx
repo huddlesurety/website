@@ -27,6 +27,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (next: FormData): FormErrors => {
     const e: FormErrors = {};
@@ -63,10 +64,28 @@ export function ContactForm() {
     if (Object.keys(next).length > 0) return;
 
     setSubmitting(true);
-    // TODO: replace with real submission (e.g., POST to /api/contact, Formspree, Resend, HubSpot)
-    await new Promise((r) => setTimeout(r, 900));
-    setSubmitting(false);
-    setSubmitted(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const payload = (await res.json().catch(() => null)) as
+          | { fieldErrors?: FormErrors }
+          | null;
+        if (payload?.fieldErrors) setErrors(payload.fieldErrors);
+        throw new Error("Request failed");
+      }
+      setSubmitted(true);
+    } catch {
+      setSubmitError(
+        "Something went wrong sending your request. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -166,6 +185,12 @@ export function ContactForm() {
       >
         {submitting ? "Submitting\u2026" : "Request Demo"}
       </button>
+
+      {submitError && (
+        <span className="error" role="alert">
+          {submitError}
+        </span>
+      )}
     </form>
   );
 }

@@ -4,8 +4,10 @@ export function Logo() {
   return (
     <Link href="/" className="logo">
       <span className="logo-mark">
-        {/* Drop /public/assets/huddle-logo.png to enable. Falls back gracefully. */}
-        <img src="/assets/huddle-logo.png" alt="" />
+        <img
+          src="https://brand.huddlesurety.co/logo/md-light-transparent.svg"
+          alt=""
+        />
       </span>
       <span className="logo-text">Huddle</span>
     </Link>

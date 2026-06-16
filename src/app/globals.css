@@ -1,16 +1,14 @@
 /* ---------- Design tokens ---------- */
 :root {
-  --background: oklch(0.9867 0.0058 267.36);
-  --foreground: oklch(0.0363 0.0058 267.36);
-  --primary: oklch(0.2829 0.0511 267.36);
-  --primary-foreground: oklch(0.9778 0.0058 267.36);
-  --muted: oklch(0.9454 0.0058 267.36);
-  --muted-foreground: oklch(0.5423 0.0058 267.36);
+  --background: #f9fbff;
+  --foreground: oklch(0.0363 0.0058 257.4);
+  --primary: #0b192c;
+  --primary-foreground: oklch(0.9778 0.0058 257.4);
+  --muted: oklch(0.9454 0.0058 257.4);
+  --muted-foreground: oklch(0.5423 0.0058 257.4);
   --destructive: oklch(0.5821 0.1701 42.56);
-  --border: oklch(0.9128 0.0058 267.36);
+  --border: oklch(0.9128 0.0058 257.4);
   --ring: oklch(0.708 0 0);
-  --font-sans: "Asta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
 }
 
 * {
@@ -172,7 +170,7 @@ main {
   line-height: 1.5;
   font-weight: 400;
   border: 1px solid transparent;
-  border-radius: 0.375rem;
+  border-radius: 0;
   padding: 0.5rem 0.75rem;
   height: 1.75rem;
   transition: all 0.2s ease;
@@ -310,7 +308,7 @@ header.nav .inner {
   height: 40px;
   background: transparent;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 0;
   padding: 0;
   cursor: pointer;
   align-items: center;
@@ -335,7 +333,7 @@ header.nav .inner {
   right: 0;
   height: 1.5px;
   background: currentColor;
-  border-radius: 1px;
+  border-radius: 0;
   transition:
     transform 0.25s ease,
     opacity 0.2s ease,
@@ -427,6 +425,7 @@ body.nav-locked {
 .hero {
   height: calc(100vh - 65px);
   padding-top: 1.5rem;
+  padding-bottom: 3rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -650,7 +649,7 @@ body.nav-locked {
 .iv-line {
   height: 6px;
   background: var(--border);
-  border-radius: 1px;
+  border-radius: 0;
   position: relative;
 }
 .iv-line.w-90 {
@@ -836,7 +835,7 @@ body.nav-locked {
   width: 76px;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -888,7 +887,7 @@ body.nav-locked {
 .iv-core .upload {
   margin-top: 2px;
   height: 4px;
-  border-radius: 1px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--primary) 12%, var(--muted));
   overflow: hidden;
   position: relative;
@@ -919,7 +918,7 @@ body.nav-locked {
   content: "";
   position: absolute;
   inset: -6px;
-  border-radius: 6px;
+  border-radius: 0;
   border: 1px solid color-mix(in oklab, var(--primary) 40%, transparent);
   animation: ivRing 2.4s ease-out infinite;
   opacity: 0;
@@ -1140,7 +1139,7 @@ body.nav-locked {
   font-size: 0.7rem;
   border: 1px solid color-mix(in oklab, oklch(0.6 0.16 145) 60%, transparent);
   padding: 0.15rem 0.4rem;
-  border-radius: 2px;
+  border-radius: 0;
   transform: rotate(-4deg);
   opacity: 0;
   animation: ivStamp 9s ease-in-out infinite;
@@ -1368,6 +1367,11 @@ body.nav-locked {
   transition:
     width 0.5s cubic-bezier(0.2, 0.6, 0.2, 1),
     background 0.3s ease;
+}
+/* Chevron is the mobile-accordion affordance only — hidden on desktop,
+   shown in the ≤767px media query below. */
+.feat-item .chev-m {
+  display: none;
 }
 .feat-item:hover {
   padding-left: 0.5rem;
@@ -1601,7 +1605,7 @@ body.nav-locked {
   inset: 0;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 0;
   box-shadow: 0 12px 30px -16px
     color-mix(in oklab, var(--primary) 40%, transparent);
   overflow: hidden;
@@ -1634,13 +1638,13 @@ body.nav-locked {
   padding: 0 0.5rem;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: 0;
   overflow: hidden;
 }
 .fv-portal .brand .mark {
   width: 9px;
   height: 9px;
-  border-radius: 2px;
+  border-radius: 0;
   flex-shrink: 0;
   background: var(--portal-brand-color, var(--primary));
   animation: fv-portal-brand-color 12s ease-in-out infinite both;
@@ -1682,7 +1686,7 @@ body.nav-locked {
   padding: 0 0.35rem;
   line-height: 12px;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: 0;
   flex-shrink: 0;
 }
 @keyframes fv-portal-brand-color {
@@ -1730,7 +1734,7 @@ body.nav-locked {
 .fv-portal .drop {
   position: relative;
   border: 1.5px dashed color-mix(in oklab, var(--primary) 35%, var(--border));
-  border-radius: 3px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--primary) 3%, var(--background));
   display: grid;
   place-items: center;
@@ -1786,7 +1790,7 @@ body.nav-locked {
   height: 56px;
   background: var(--background);
   border: 1px solid color-mix(in oklab, var(--primary) 45%, var(--border));
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: 0 6px 14px -6px
     color-mix(in oklab, var(--primary) 35%, transparent);
   opacity: 0;
@@ -1846,7 +1850,7 @@ body.nav-locked {
   padding: 0.32rem 0.45rem;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: 0;
   opacity: 0;
   transform: translateY(4px);
   animation: fv-portal-item 12s ease-out infinite both;
@@ -1874,7 +1878,7 @@ body.nav-locked {
   flex: 1;
   height: 5px;
   background: color-mix(in oklab, var(--muted-foreground) 30%, transparent);
-  border-radius: 1px;
+  border-radius: 0;
 }
 .fv-portal .item.i2 .bar {
   width: 78%;
@@ -1977,7 +1981,7 @@ body.nav-locked {
   padding: 0.4rem 0.5rem;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: 0 4px 10px -6px
     color-mix(in oklab, var(--primary) 25%, transparent);
   position: relative;
@@ -1988,7 +1992,7 @@ body.nav-locked {
   height: 18px;
   background: var(--background);
   border: 1px solid color-mix(in oklab, var(--primary) 45%, var(--border));
-  border-radius: 1px;
+  border-radius: 0;
   position: relative;
   flex-shrink: 0;
 }
@@ -2125,7 +2129,7 @@ body.nav-locked {
   padding: 0.5rem 0.55rem 0.55rem;
   background: var(--background);
   border: 1px solid color-mix(in oklab, var(--primary) 35%, var(--border));
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: 0 8px 20px -10px
     color-mix(in oklab, var(--primary) 40%, transparent);
   display: grid;
@@ -2161,7 +2165,7 @@ body.nav-locked {
 .fv-auto .out .row {
   height: 7px;
   background: color-mix(in oklab, var(--muted) 70%, transparent);
-  border-radius: 1px;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
 }
@@ -2290,7 +2294,7 @@ body.nav-locked {
   inset: 0;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: 0;
   box-shadow: 0 2px 4px -2px
     color-mix(in oklab, var(--primary) 10%, transparent);
 }
@@ -2328,7 +2332,7 @@ body.nav-locked {
   height: 130px;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: 0;
   box-shadow: 0 6px 18px -6px
     color-mix(in oklab, var(--primary) 25%, transparent);
   transform: translate(-50%, -50%);
@@ -2519,7 +2523,7 @@ body.nav-locked {
   width: 100%;
   background: var(--background);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 0;
   padding: 14px 16px 16px;
   box-shadow:
     0 1px 0 color-mix(in oklab, var(--muted-foreground) 8%, transparent),
@@ -2591,7 +2595,7 @@ body.nav-locked {
   position: relative;
   flex: 1 1 auto;
   height: 22px;
-  border-radius: 3px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--muted-foreground) 6%, transparent);
   box-shadow: inset 0 0 0 1px
     color-mix(in oklab, var(--muted-foreground) 14%, transparent);
@@ -2629,7 +2633,7 @@ body.nav-locked {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: inherit;
+  border-radius: 0;
   box-shadow:
     inset 0 0 0 1px color-mix(in oklab, var(--primary) 55%, transparent),
     0 0 0 3px color-mix(in oklab, var(--primary) 14%, transparent);
@@ -2691,7 +2695,7 @@ body.nav-locked {
   align-items: center;
   gap: 4px;
   padding: 3px 6px;
-  border-radius: 999px;
+  border-radius: 0;
   background: color-mix(in oklab, var(--primary) 14%, transparent);
   color: var(--primary);
   opacity: 0;
@@ -3062,9 +3066,13 @@ body.nav-locked {
 }
 .process-sticky {
   position: sticky;
-  top: 0;
-  height: 100vh;
-  padding: 8rem 0 5rem;
+  /* Pin below the fixed 65px nav (+24px gap) so the section title clears the
+     nav when the scroll-lock engages. Top padding is kept at 0 so the
+     separator→content spacing matches every other section (governed by the
+     section's own `:has(.section-rule)` padding). */
+  top: 89px;
+  height: calc(100vh - 89px);
+  padding: 0 0 5rem;
   display: flex;
   flex-direction: column;
 }
@@ -3242,7 +3250,7 @@ body.nav-locked {
   color: var(--foreground);
   display: flex;
   align-items: center;
-  border-radius: 2px;
+  border-radius: 0;
 }
 .mock-input.filled {
   background: color-mix(in oklab, var(--primary) 5%, var(--background));
@@ -3274,7 +3282,7 @@ body.nav-locked {
 .mock-line {
   height: 0.5rem;
   background: var(--border);
-  border-radius: 2px;
+  border-radius: 0;
 }
 .mock-line.w-90 {
   width: 90%;
@@ -3333,7 +3341,7 @@ body.nav-locked {
   color: var(--muted-foreground);
   padding: 0.125rem 0.5rem;
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: 0;
 }
 .mock-list-item .status.live {
   background: color-mix(in oklab, oklch(0.7 0.18 145) 15%, transparent);
@@ -3472,7 +3480,7 @@ body.nav-locked {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
-  border-radius: 2px;
+  border-radius: 0;
   font-family: ui-monospace, SFMono-Regular, monospace;
   font-size: 0.65rem;
   color: var(--muted-foreground);
@@ -3660,6 +3668,9 @@ body.nav-locked {
 .contact-info {
   flex: 1;
 }
+.contact-description {
+  margin-top: 1.25rem;
+}
 .contact-benefits {
   display: flex;
   flex-direction: column;
@@ -3728,7 +3739,7 @@ form.contact-form {
   font-family: inherit;
   font-size: 0.875rem;
   color: var(--foreground);
-  border-radius: 0.375rem;
+  border-radius: 0;
   transition: border-color 0.2s;
   outline: none;
 }
@@ -3750,7 +3761,7 @@ form.contact-form {
 
 .success {
   border: 1px dashed var(--border);
-  border-radius: 0.75rem;
+  border-radius: 0;
   padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -3763,7 +3774,7 @@ form.contact-form {
 .success .icon {
   width: 2rem;
   height: 2rem;
-  border-radius: 0.375rem;
+  border-radius: 0;
   background: var(--muted);
   display: grid;
   place-items: center;
@@ -3884,7 +3895,7 @@ main > section {
   position: relative;
 }
 main > section:has(> .section-rule) {
-  padding-top: 1.5rem;
+  padding-top: 5rem;
 }
 .section-rule {
   position: absolute;
@@ -3991,7 +4002,7 @@ main > section:has(> .section-rule) {
     width: auto;
     max-width: 18rem;
     height: 3.25rem;
-    border-radius: 0.5rem;
+    border-radius: 0;
     font-size: 1.0625rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -4416,7 +4427,7 @@ main > section:has(> .section-rule) {
     top: auto !important;
     width: 100% !important;
     max-height: 70vh;
-    border-radius: 12px 12px 0 0;
+    border-radius: 0;
     border: 1px solid var(--border);
     border-bottom: none;
   }

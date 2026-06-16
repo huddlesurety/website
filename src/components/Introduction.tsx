@@ -137,7 +137,10 @@ function IntroductionVisual() {
           <div className="iv-logo" aria-hidden="true">
             <span className="ring"></span>
             <span className="ring r2"></span>
-            <img src="/assets/huddle-logo.png" alt="" />
+            <img
+              src="https://brand.huddlesurety.co/logo/md-light-transparent.svg"
+              alt=""
+            />
           </div>
         </div>
 
